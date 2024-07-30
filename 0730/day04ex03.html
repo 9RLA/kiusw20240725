@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validationForm(form) {
+            event.preventDefault();
+            console.log('폼 유효성 검사');
+        }
+    </script>
+</head>
+<body>
+    <h1>JS Form Validation</h1>
+    <form action="http://naver.com" id="kiboform" onsubmit="validationForm(this)">
+        제목: <input type="text" name="title"><br>
+        이름: <input type="text" name="name"><br>
+        내용: <textarea name="content"></textarea><br>
+        <input type="submit" value="저장">
+    </form>
+
+    <script>
+        var kiboform = document.getElementById('kiboform');
+        kiboform.onsubmit = function(event) {
+            event.preventDefault();
+            if(kiboform.title.value == "") {
+                alert('제목을 입력하시오.');
+                kiboform.title.focus();
+                return;
+            }
+            if(kiboform.name.value == "") {
+                alert('이름을 입력하시오.');
+                kiboform.name.focus();
+                return;
+            }
+            if(kiboform.content.value == "") {
+                alert('내용을 입력하시오.');
+                kiboform.content.focus();
+                return;
+            }
+            // 모든 유효성 검사가 통과 되면
+            kiboform.method = 'get';
+            kiboform.submit();
+        }
+    </script>
+</body>
+</html> 

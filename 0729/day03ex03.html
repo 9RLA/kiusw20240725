@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width",initial-scale=1.0"
+    <title>Document</title>
+    <script>
+        window.onload=function() {
+            var memoTxt = document.getElementById('memoTxt');
+            
+            // querySelecor('')는 css의 선택기(selecor)를 그대로 사용 가능
+            // id는 #으로 시작
+            // class는 .으로 시작
+            // 속성은 []로 구분
+            //태그는 그냥 태그 이름
+            var demo = document.querySelector('#clickBtn');
+            var clickBtn = document.querySelector('#clickBtn')
+            var resetBtn = document.querySelector('#resetBtn');
+
+            // TDD : 테스트 주도 개발
+            console.log(memoTxt, demo, resetBtn);
+
+            // 이벤트 핸들러 만들기(각자 만들기)
+
+            clickBtn.onclick = function() {
+                console.log=("클릭되었다!");
+                demo.innerHTML="<h2>버튼이 클릭 되었다!</h2>";
+                document.body.bgColor = "pink"
+            }
+        }
+    </script>
+</head>
+<body>
+    메모: <input type="text" id="memoTxt">
+    <p id="demo">JavaScript chan change HTML content.</p>
+
+    <button type="button" id="clickBtn" class="btn">click</button>
+    <button type="button" id="resetBtn">reset</button>
+</body>
+</html>
